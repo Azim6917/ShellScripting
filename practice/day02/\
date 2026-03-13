@@ -1,9 +1,0 @@
-#!/bin/bash
-
-
-<< Note is multiline comment 
-Note
-
-name= Azim
-
-echo "My name is $name"
