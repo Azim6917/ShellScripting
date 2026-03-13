@@ -27,7 +27,7 @@ read -p "Enter the value = " value1
 
 read -p "Enter another value you want to add = " value2
 
-value3=$((value1+$value2))
+value3=$((value1+value2))
 
 echo "your answer is $value3"
 
