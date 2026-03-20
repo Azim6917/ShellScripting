@@ -32,7 +32,7 @@ comment
                 exit 0
 testing
 
-
+<< tmp
 error() {
 	find $1
 }
@@ -44,4 +44,32 @@ else
 	echo "file found"
 	exit 0
 fi
+tmp
 
+#!/bin/bash
+
+# Check if argument is provided
+if [ $# -eq 0 ]
+then
+  echo "Error: Please provide a filename"
+  exit 1
+fi
+
+file=$1
+
+# Check if file exists
+if [ ! -f "$file" ]
+then
+  echo "Error: File does not exist"
+  exit 1
+fi
+
+# If file exists
+echo "File found"
+
+# Count number of lines
+lines=$(wc -l < "$file")
+
+echo "Total lines: $lines"
+
+exit 0
