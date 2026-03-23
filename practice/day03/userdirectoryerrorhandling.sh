@@ -20,7 +20,10 @@ if [ ! -d $Dir ]
 then
 	mkdir $Dir
 	echo "$Dir has been successfully created."
-	exit 1
+	exit 0
 fi
 
 echo "Error: $Dir already exists."
+exit 1
+
+

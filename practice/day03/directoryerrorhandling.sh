@@ -19,7 +19,7 @@ Errorhandling
 
 if [ $# -eq 0 ]
 then
-	echo "Error: Directory name not entered"
+	echo "Error: Directory name not entered."
 	exit 1
 
 fi
@@ -30,7 +30,8 @@ if [ ! -d "$folder" ]
 then
 	mkdir $folder
 	echo "$folder has been created Successfully."
-	exit 1
+	exit 0
 fi
 
-echo "$folder already exists"
+echo "Error: $folder already exists."
+exit 1
