@@ -15,7 +15,7 @@ The script should take a number from user.
 Call the function from the script.
 Functions
 
-function findout() {
+findout() {
 
 	read -p "Enter the number: " numb
 	if ((numb %2==0)) 
