@@ -79,8 +79,8 @@ main() {
     AMI_ID="ami-0ec10929233384c7f"
     INSTANCE_TYPE="t3.micro"
     KEY_NAME="t3key"
-    SUBNET_ID=""
-    SECURITY_GROUP_IDS=""  # Add your security group IDs separated by space
+    SUBNET_ID="subnet-0adaaae21c7c1fa37"
+    SECURITY_GROUP_IDS="sg-09737fe515f49e232"  # Add your security group IDs separated by space
     INSTANCE_NAME="Shell-Script-EC2-Demo"
 
     # Call the function to create the EC2 instance
