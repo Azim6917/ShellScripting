@@ -83,11 +83,22 @@ required_restarts() {
     sudo systemctl restart docker
 }
 
-deploy() {
+<< deploy 
+
+    deploy() {
     echo "Building the app...."
     docker build -t notes-app .
     echo "Running the app..."
     docker run -d -p 8000:8000 notes-app:latest
+} 
+
+deploy
+
+deploy() {
+    echo "Building the app...."
+    docker build -t notes-app .
+    echo "Running the app..."
+    docker compose up -d --force-recreate
 }
 
 echo "** DEPLOYMENT STARTED **"
@@ -108,5 +119,9 @@ if ! required_restarts; then
     exit 1
 fi
 
-deploy
+if ! deploy; then
+    echo "Deployment Failed, Logs will sended to admin. "
+	exit 1
+fi
+
 echo "************************** DEPLOYMENT DONE **********************************"
