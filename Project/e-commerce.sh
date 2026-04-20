@@ -28,6 +28,7 @@ deploy(){
 	echo "--- Deploying app ---"
 	docker-compose up -d
 }
+
 echo "----- Deployment Started ----"
 if ! clone; then
 	echo "Directory Already Exist."
